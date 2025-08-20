@@ -271,8 +271,8 @@ spec:
             --insecure
             --advertise-host $(hostname -f)
             --http-addr 0.0.0.0
-            --locality=region=emea
-            --join cockroachdb-0.cockroachdb-emea,cockroachdb-1.cockroachdb-emea,cockroachdb-2.cockroachdb-emea,cockroachdb-0.cockroachdb-namr,cockroachdb-1.cockroachdb-namr,cockroachdb-2.cockroachdb-namr,cockroachdb-0.cockroachdb-apac,cockroachdb-1.cockroachdb-apac,cockroachdb-2.cockroachdb-apac
+            --locality=region=namr
+            --join cockroachdb-emea-0.cockroachdb,cockroachdb-emea-1.cockroachdb,cockroachdb-emea-2.cockroachdb,cockroachdb-namr-0.cockroachdb,cockroachdb-namr-1.cockroachdb-namr,cockroachdb-namr-2.cockroachdb-namr,cockroachdb-apac-0.cockroachdb,cockroachdb-apac-1.cockroachdb,cockroachdb-apac-2.cockroachdb
             --cache $(expr $MEMORY_LIMIT_MIB / 4)MiB
             --max-sql-memory $(expr $MEMORY_LIMIT_MIB / 4)MiB
       # No pre-stop hook is required, a SIGTERM plus some time is all that's
@@ -384,8 +384,8 @@ spec:
             --insecure
             --advertise-host $(hostname -f)
             --http-addr 0.0.0.0
-            --locality=region=emea
-            --join cockroachdb-0.cockroachdb-emea,cockroachdb-1.cockroachdb-emea,cockroachdb-2.cockroachdb-emea,cockroachdb-0.cockroachdb-namr,cockroachdb-1.cockroachdb-namr,cockroachdb-2.cockroachdb-namr,cockroachdb-0.cockroachdb-apac,cockroachdb-1.cockroachdb-apac,cockroachdb-2.cockroachdb-apac
+            --locality=region=apac
+            --join cockroachdb-emea-0.cockroachdb,cockroachdb-emea-1.cockroachdb,cockroachdb-emea-2.cockroachdb,cockroachdb-namr-0.cockroachdb,cockroachdb-namr-1.cockroachdb-namr,cockroachdb-namr-2.cockroachdb-namr,cockroachdb-apac-0.cockroachdb,cockroachdb-apac-1.cockroachdb,cockroachdb-apac-2.cockroachdb
             --cache $(expr $MEMORY_LIMIT_MIB / 4)MiB
             --max-sql-memory $(expr $MEMORY_LIMIT_MIB / 4)MiB
       # No pre-stop hook is required, a SIGTERM plus some time is all that's
