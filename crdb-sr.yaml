@@ -24,6 +24,29 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  # This service is meant to be used by external clients of the database. It exposes a LoadBalancer that will
+  # automatically load balance connections to the different database pods.
+  name: cockroachdb-lb
+  labels:
+    app: cockroachdb
+spec:
+  type: LoadBalancer
+  selector:
+    app: cockroachdb
+  ports:
+  # The main port, served by gRPC, serves Postgres-flavor SQL, internode
+  # traffic and the cli.
+  - port: 26257
+    targetPort: 26257
+    name: grpc
+  # The secondary port serves the UI as well as health and debug endpoints.
+  - port: 8080
+    targetPort: 8080
+    name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
   # This service only exists to create DNS entries for each pod in the stateful
   # set such that they can resolve each other's IP addresses. It does not
   # create a load-balanced ClusterIP and should not be used directly by clients
