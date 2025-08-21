@@ -181,7 +181,7 @@ spec:
             --insecure
             --advertise-host $(hostname -f)
             --http-addr 0.0.0.0
-            --locality=region=emea
+            --locality=region=EMEA
             --join cockroachdb-emea-0.cockroachdb,cockroachdb-emea-1.cockroachdb,cockroachdb-emea-2.cockroachdb,cockroachdb-namr-0.cockroachdb,cockroachdb-namr-1.cockroachdb-namr,cockroachdb-namr-2.cockroachdb-namr,cockroachdb-apac-0.cockroachdb,cockroachdb-apac-1.cockroachdb,cockroachdb-apac-2.cockroachdb
             --cache $(expr $MEMORY_LIMIT_MIB / 4)MiB
             --max-sql-memory $(expr $MEMORY_LIMIT_MIB / 4)MiB
@@ -294,7 +294,7 @@ spec:
             --insecure
             --advertise-host $(hostname -f)
             --http-addr 0.0.0.0
-            --locality=region=namr
+            --locality=region=NAMR
             --join cockroachdb-emea-0.cockroachdb,cockroachdb-emea-1.cockroachdb,cockroachdb-emea-2.cockroachdb,cockroachdb-namr-0.cockroachdb,cockroachdb-namr-1.cockroachdb-namr,cockroachdb-namr-2.cockroachdb-namr,cockroachdb-apac-0.cockroachdb,cockroachdb-apac-1.cockroachdb,cockroachdb-apac-2.cockroachdb
             --cache $(expr $MEMORY_LIMIT_MIB / 4)MiB
             --max-sql-memory $(expr $MEMORY_LIMIT_MIB / 4)MiB
@@ -407,7 +407,7 @@ spec:
             --insecure
             --advertise-host $(hostname -f)
             --http-addr 0.0.0.0
-            --locality=region=apac
+            --locality=region=APAC
             --join cockroachdb-emea-0.cockroachdb,cockroachdb-emea-1.cockroachdb,cockroachdb-emea-2.cockroachdb,cockroachdb-namr-0.cockroachdb,cockroachdb-namr-1.cockroachdb-namr,cockroachdb-namr-2.cockroachdb-namr,cockroachdb-apac-0.cockroachdb,cockroachdb-apac-1.cockroachdb,cockroachdb-apac-2.cockroachdb
             --cache $(expr $MEMORY_LIMIT_MIB / 4)MiB
             --max-sql-memory $(expr $MEMORY_LIMIT_MIB / 4)MiB
